@@ -29,10 +29,10 @@ PLACEHOLDERS = ("{{TITLE}}", "{{CONTRIBUTIONS}}")
 
 DATE_WIDTH = 7
 TYPE_WIDTH = 5
-STATE_WIDTH = 12
-REPOSITORY_WIDTH = 24
-TITLE_CLIP_AT = 79
-TITLE_MAX_WIDTH = 82
+STATE_WIDTH = 7
+REPOSITORY_WIDTH = 27
+TITLE_CLIP_AT = 81
+TITLE_MAX_WIDTH = 84
 NBSP = "\N{NO-BREAK SPACE}"
 ZWJ = "\N{ZERO WIDTH JOINER}"
 VS16 = "\N{VARIATION SELECTOR-16}"
@@ -121,7 +121,7 @@ def incorporated_prs(raw: str) -> dict[str, str]:
             raise TrackerError(
                 f"INCORPORATED_PRS contains invalid value {value!r}; expected owner/repo#number"
             )
-        overrides[f"{match.group(1).casefold()}#{match.group(2)}"] = "Incorporated"
+        overrides[f"{match.group(1).casefold()}#{match.group(2)}"] = "Adopted"
     return overrides
 
 

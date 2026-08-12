@@ -13,7 +13,7 @@ GitHub 저장소의 **Settings → Secrets and variables → Actions → Variabl
 | `MIN_STARS` | `100` | 저장소의 최소 현재 star 수 |
 | `INCLUDE_REPOS` | 빈 값 | star 수와 관계없이 포함할 저장소 |
 | `EXCLUDE_REPOS` | 빈 값 | 항상 제외할 저장소 |
-| `INCORPORATED_PRS` | 빈 값 | `Incorporated`로 표시할 PR |
+| `INCORPORATED_PRS` | 빈 값 | `Adopted`로 표시할 PR |
 
 여러 값은 쉼표로 구분합니다. 대소문자는 구분하지 않고 각 값의 앞뒤 공백은 제거합니다.
 
@@ -30,7 +30,7 @@ INCORPORATED_PRS=spring-projects/spring-framework#12345,owner/repo#456
 3. `INCLUDE_REPOS`에 있으면 포함합니다.
 4. 나머지는 star 수가 `MIN_STARS` 이상일 때 포함합니다.
 
-PR 상태는 명시적 override, GitHub의 merged 상태, open 상태, closed 상태 순서로 결정합니다. `INCORPORATED_PRS`에 없는 closed/unmerged PR을 임의로 수락 또는 거절로 해석하지 않습니다.
+PR 상태는 명시적 override, GitHub의 merged 상태, open 상태, closed 상태 순서로 결정합니다. `INCORPORATED_PRS`에 등록한 PR은 `Adopted`로 표시하며, 그 외 closed/unmerged PR을 임의로 수락 또는 거절로 해석하지 않습니다.
 
 ## 실행
 
@@ -47,7 +47,7 @@ workflow는 저장소 기본 `GITHUB_TOKEN`과 `contents: write` 권한만 사�
 {{CONTRIBUTIONS}}
 ```
 
-기여 목록은 날짜, 유형, 상태, 저장소, 제목 순서의 한 줄 레코드입니다. 저장소가 길면 owner를 생략하고, 제목은 표시 폭 79칸 이상일 때 줄여 `...`을 붙입니다. 최종 제목은 최대 82칸입니다. ASCII 영문과 숫자는 1칸, 한글·한자·전각 문자와 이모지는 2칸으로 계산합니다. 축약해도 링크와 hover에는 원문을 유지합니다.
+기여 목록은 날짜, 유형, 상태, 저장소, 제목 순서의 한 줄 레코드입니다. 저장소 열은 27칸이며 더 길면 owner를 생략합니다. 제목은 표시 폭 81칸 이상일 때 줄여 `...`을 붙이고, 최종 폭은 최대 84칸입니다. ASCII 영문과 숫자는 1칸, 한글·한자·전각 문자와 이모지는 2칸으로 계산합니다. 축약해도 링크와 hover에는 원문을 유지합니다.
 
 목록은 `created_at` 최신순으로 정렬합니다. 검색 pagination과 GitHub Search의 1,000개 제한을 처리하며, GraphQL 응답의 저장소 metadata는 실행 중 cache합니다.
 
