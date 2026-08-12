@@ -1,0 +1,51 @@
+name: Update Open Source Contributions
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron uses UTC. 15:00 UTC is 00:00 KST on the following day.
+    - cron: "0 15 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-contributions-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update-contributions:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
+      TITLE: ${{ vars.TITLE }}
+      MIN_STARS: ${{ vars.MIN_STARS }}
+      INCLUDE_REPOS: ${{ vars.INCLUDE_REPOS }}
+      EXCLUDE_REPOS: ${{ vars.EXCLUDE_REPOS }}
+      INCORPORATED_PRS: ${{ vars.INCORPORATED_PRS }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Update contribution Markdown
+        run: python update_contributions.py
+
+      - name: Commit README.md when changed
+        run: |
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No contribution changes. Nothing to commit."
+            exit 0
+          fi
+
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs: update open source contributions"
+          git push
