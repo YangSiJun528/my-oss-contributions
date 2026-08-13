@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="238" viewBox="0 0 960 238" role="img" aria-labelledby="title description">
+  <title id="title">Open-source contributions</title>
+  <desc id="description">Contribution records for YangSiJun528</desc>
+  <style>
+    .background { fill: #ffffff; }
+    .border { fill: none; stroke: #d0d7de; }
+    .divider { stroke: #d8dee4; }
+    .heading { fill: #1f2328; font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .cell { fill: #f6f8fa; stroke: #d0d7de; }
+    .mono { fill: #1f2328; font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .repo { fill: #0969da; font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .item { fill: #0969da; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .more { fill: #0969da; font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #0d1117; }
+      .border, .divider { stroke: #30363d; }
+      .heading, .mono { fill: #f0f6fc; }
+      .cell { fill: #161b22; stroke: #30363d; }
+      .repo, .item, .more { fill: #58a6ff; }
+    }
+  </style>
+
+  <rect class="background" x="0.5" y="0.5" width="959" height="237" rx="10"/>
+  <rect class="border" x="0.5" y="0.5" width="959" height="237" rx="10"/>
+  <text class="heading" x="22" y="31">Open-Source Contributions</text>
+  <line class="divider" x1="0" y1="45.5" x2="960" y2="45.5"/>
+
+  <g transform="translate(22 56)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-08</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">rust-lang/rustlings</text>
+    <text class="item" x="425" y="17">Fix stale exercise references</text>
+  </g>
+  <g transform="translate(22 88)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">python/cpython</text>
+    <text class="item" x="425" y="17">Fix inconsistencies in InternalDocs/parser.md</text>
+  </g>
+  <g transform="translate(22 120)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">RustPython/RustPython</text>
+    <text class="item" x="425" y="17">Fix `staticmethod` and `classmethod` repr error propagation</text>
+  </g>
+  <g transform="translate(22 152)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">RustPython/RustPython</text>
+    <text class="item" x="425" y="17">Fix `binascii.b2a_qp` CRLF boundary check</text>
+  </g>
+  <g transform="translate(22 184)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">RustPython/RustPython</text>
+    <text class="item" x="425" y="17">Remove obsolete _symtable APIs</text>
+  </g>
+
+  <text class="more" x="938" y="226" text-anchor="end">View all contributions →</text>
+</svg>
