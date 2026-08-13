@@ -38,6 +38,16 @@ PR 상태는 명시적 override, GitHub의 merged 상태, open 상태, closed �
 
 workflow는 저장소 기본 `GITHUB_TOKEN`과 `contents: write` 권한만 사용합니다. 별도 PAT는 필요하지 않습니다. 생성 결과가 기존 `README.md`와 같으면 커밋하지 않으며, 변경된 경우 `github-actions[bot]`이 커밋합니다.
 
+## 미리보기 사용
+
+workflow는 최근 5개 기여를 담은 `preview-5.svg`도 함께 갱신합니다. 다른 README에서 아래처럼 사용하면 이미지 전체가 이 저장소로 연결됩니다.
+
+```markdown
+[![Open-Source Contributions](https://raw.githubusercontent.com/YangSiJun528/my-oss-contributions/main/preview-5.svg)](https://github.com/YangSiJun528/my-oss-contributions)
+```
+
+미리보기에는 제목, 기여 5개, 전체 내역 링크만 표시합니다. 원격 README에 위 코드를 직접 추가하지는 않습니다.
+
 ## 템플릿
 
 문서 형식은 `README.template.md`에서 수정합니다. 다음 placeholder는 반드시 유지해야 합니다.

@@ -34,12 +34,12 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Update contribution Markdown
+      - name: Update generated files
         run: python update_contributions.py
 
-      - name: Commit README.md when changed
+      - name: Commit generated files when changed
         run: |
-          git add README.md
+          git add README.md preview-5.svg
           if git diff --cached --quiet; then
             echo "No contribution changes. Nothing to commit."
             exit 0

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build README.md from GitHub's GraphQL API using only the Python standard library."""
+"""Build the contribution README and SVG preview with the GitHub GraphQL API."""
 
 from __future__ import annotations
 
@@ -11,6 +11,7 @@ import sys
 import time
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
+from html import escape
 from pathlib import Path
 from typing import Any, Mapping
 from unicodedata import category, east_asian_width
@@ -33,6 +34,9 @@ STATE_WIDTH = 7
 REPOSITORY_WIDTH = 27
 TITLE_CLIP_AT = 81
 TITLE_MAX_WIDTH = 84
+PREVIEW_COUNT = 5
+PREVIEW_WIDTH = 960
+PREVIEW_TITLE_WIDTH = 68
 NBSP = "\N{NO-BREAK SPACE}"
 ZWJ = "\N{ZERO WIDTH JOINER}"
 VS16 = "\N{VARIATION SELECTOR-16}"
@@ -504,6 +508,64 @@ def render_contributions(items: list[Contribution]) -> str:
     return "  \n".join(lines)
 
 
+def render_preview(items: list[Contribution], username: str) -> str:
+    rows = items[:PREVIEW_COUNT]
+    height = 78 + 32 * len(rows)
+    groups: list[str] = []
+
+    for index, item in enumerate(rows):
+        repository = item.repository
+        if display_width(repository) > REPOSITORY_WIDTH:
+            repository = repository.rsplit("/", 1)[-1]
+        repository = shorten(repository, REPOSITORY_WIDTH)
+        title = shorten(item.title, PREVIEW_TITLE_WIDTH, "...")
+        groups.append(
+            f'''  <g transform="translate(22 {56 + index * 32})">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">{item.created_at:%Y-%m}</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">{escape(item.item_type)}</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">{escape(item.state)}</text>
+    <text class="repo" x="224" y="17">{escape(repository)}</text>
+    <text class="item" x="425" y="17">{escape(title)}</text>
+  </g>'''
+        )
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{PREVIEW_WIDTH}" height="{height}" viewBox="0 0 {PREVIEW_WIDTH} {height}" role="img" aria-labelledby="title description">
+  <title id="title">Open-source contributions</title>
+  <desc id="description">Contribution records for {escape(username)}</desc>
+  <style>
+    .background {{ fill: #ffffff; }}
+    .border {{ fill: none; stroke: #d0d7de; }}
+    .divider {{ stroke: #d8dee4; }}
+    .heading {{ fill: #1f2328; font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .cell {{ fill: #f6f8fa; stroke: #d0d7de; }}
+    .mono {{ fill: #1f2328; font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
+    .repo {{ fill: #0969da; font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .item {{ fill: #0969da; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .more {{ fill: #0969da; font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    @media (prefers-color-scheme: dark) {{
+      .background {{ fill: #0d1117; }}
+      .border, .divider {{ stroke: #30363d; }}
+      .heading, .mono {{ fill: #f0f6fc; }}
+      .cell {{ fill: #161b22; stroke: #30363d; }}
+      .repo, .item, .more {{ fill: #58a6ff; }}
+    }}
+  </style>
+
+  <rect class="background" x="0.5" y="0.5" width="959" height="{height - 1}" rx="10"/>
+  <rect class="border" x="0.5" y="0.5" width="959" height="{height - 1}" rx="10"/>
+  <text class="heading" x="22" y="31">Open-Source Contributions</text>
+  <line class="divider" x1="0" y1="45.5" x2="960" y2="45.5"/>
+
+{chr(10).join(groups)}
+
+  <text class="more" x="938" y="{height - 12}" text-anchor="end">View all contributions →</text>
+</svg>
+'''
+
+
 def read_template(path: Path) -> str:
     try:
         template = path.read_text(encoding="utf-8")
@@ -522,7 +584,7 @@ def render_template(template: str, title: str, records: str) -> str:
 
 def write_if_changed(path: Path, content: str) -> bool:
     if path.exists() and path.read_text(encoding="utf-8") == content:
-        log("README.md is already up to date")
+        log(f"{path.name} is already up to date")
         return False
     path.write_text(content, encoding="utf-8")
     log(f"Updated {path.name}")
@@ -542,15 +604,17 @@ def main(argv: list[str] | None = None) -> int:
         template = read_template(root / "README.template.md")
         config = load_config()
         client = GitHub(os.environ.get("GITHUB_TOKEN", "").strip())
+        items = contributions(client, config)
         rendered = render_template(
             template,
             config.title,
-            render_contributions(contributions(client, config)),
+            render_contributions(items),
         )
         if args.dry_run:
             print(rendered, end="")
         else:
             write_if_changed(root / "README.md", rendered)
+            write_if_changed(root / "preview-5.svg", render_preview(items, config.username))
         return 0
     except (OSError, TrackerError) as error:
         print(f"Error: {error}", file=sys.stderr)
