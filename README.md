@@ -2,6 +2,7 @@
 
 My open-source contributions.
 
+<sub>`2026-08` | ` PR  ` | ` Open  ` | [`     ayangweb/BongoCat     `](https://github.com/ayangweb/BongoCat) | [feat: add visual guide for macOS input monitoring permission](https://github.com/ayangweb/BongoCat/pull/1018)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`    rust-lang/rustlings    `](https://github.com/rust-lang/rustlings) | [Fix stale exercise references](https://github.com/rust-lang/rustlings/pull/2433)</sub>  
 <sub>`2026-07` | ` PR  ` | `Merged ` | [`      python/cpython       `](https://github.com/python/cpython) | [Fix inconsistencies in InternalDocs/parser.md](https://github.com/python/cpython/pull/154917)</sub>  
 <sub>`2026-07` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Fix `staticmethod` and `classmethod` repr error propagation](https://github.com/RustPython/RustPython/pull/8371)</sub>  
@@ -9,8 +10,8 @@ My open-source contributions.
 <sub>`2026-07` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Remove obsolete _symtable APIs](https://github.com/RustPython/RustPython/pull/8309)</sub>  
 <sub>`2026-07` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Add JetBrains IDE settings](https://github.com/RustPython/RustPython/pull/8262)</sub>  
 <sub>`2026-07` | `Issue` | `Closed ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Improve JetBrains IDE integration](https://github.com/RustPython/RustPython/issues/8259)</sub>  
-<sub>`2026-05` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Resolve bootVersion wildcards from metadata versions](https://github.com/spring-io/initializr/pull/1797)</sub>  
-<sub>`2026-05` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Record JVM version change reasons](https://github.com/spring-io/initializr/pull/1795)</sub>  
+<sub>`2026-05` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Allow major and minor versions for bootVersion parameter](https://github.com/spring-io/initializr/pull/1797)</sub>  
+<sub>`2026-05` | ` PR  ` | `Closed ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Record JVM version change reasons](https://github.com/spring-io/initializr/pull/1795)</sub>  
 <sub>`2026-02` | `Issue` | ` Open  ` | [`    stanford-cs146s-kr     `](https://github.com/team-attention/stanford-cs146s-kr "team-attention/stanford-cs146s-kr") | [1주차 번역 자료 "Deep Dive into LLMs like ChatGPT"의 17~20챕터 영문 스크립트와 챕...](https://github.com/team-attention/stanford-cs146s-kr/issues/12 "1주차 번역 자료 \"Deep Dive into LLMs like ChatGPT\"의 17~20챕터 영문 스크립트와 챕터 시작 위치 불일치")</sub>  
 <sub>`2026-02` | `Issue` | ` Open  ` | [`    stanford-cs146s-kr     `](https://github.com/team-attention/stanford-cs146s-kr "team-attention/stanford-cs146s-kr") | [1주차 번역 자료 "Deep Dive into LLMs like ChatGPT"의 16, 20번 챕터 번역이 누락되...](https://github.com/team-attention/stanford-cs146s-kr/issues/11 "1주차 번역 자료 \"Deep Dive into LLMs like ChatGPT\"의 16, 20번 챕터 번역이 누락되었습니다")</sub>  
 <sub>`2025-12` | ` PR  ` | ` Open  ` | [`       apache/fesod        `](https://github.com/apache/fesod) | [fix: ensure converter isolation across ExcelWriter and ExcelReader](https://github.com/apache/fesod/pull/740)</sub>  

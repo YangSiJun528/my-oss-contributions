@@ -31,11 +31,21 @@
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
     <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Open</text>
+    <text class="repo" x="224" y="17">ayangweb/BongoCat</text>
+    <text class="item" x="425" y="17">feat: add visual guide for macOS input monitoring permission</text>
+  </g>
+  <g transform="translate(22 88)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-08</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">rust-lang/rustlings</text>
     <text class="item" x="425" y="17">Fix stale exercise references</text>
   </g>
-  <g transform="translate(22 88)">
+  <g transform="translate(22 120)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
@@ -45,7 +55,7 @@
     <text class="repo" x="224" y="17">python/cpython</text>
     <text class="item" x="425" y="17">Fix inconsistencies in InternalDocs/parser.md</text>
   </g>
-  <g transform="translate(22 120)">
+  <g transform="translate(22 152)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
@@ -55,16 +65,6 @@
     <text class="repo" x="224" y="17">RustPython/RustPython</text>
     <text class="item" x="425" y="17">Fix `staticmethod` and `classmethod` repr error propagation</text>
   </g>
-  <g transform="translate(22 152)">
-    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
-    <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
-    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
-    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
-    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
-    <text class="repo" x="224" y="17">RustPython/RustPython</text>
-    <text class="item" x="425" y="17">Fix `binascii.b2a_qp` CRLF boundary check</text>
-  </g>
   <g transform="translate(22 184)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-07</text>
@@ -73,7 +73,7 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">RustPython/RustPython</text>
-    <text class="item" x="425" y="17">Remove obsolete _symtable APIs</text>
+    <text class="item" x="425" y="17">Fix `binascii.b2a_qp` CRLF boundary check</text>
   </g>
 
   <text class="more" x="938" y="226" text-anchor="end">View all contributions →</text>
