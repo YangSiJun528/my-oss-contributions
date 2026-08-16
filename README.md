@@ -2,7 +2,7 @@
 
 My open-source contributions.
 
-<sub>`2026-08` | ` PR  ` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Remove private comprehension flags](https://github.com/RustPython/RustPython/pull/8537)</sub>  
+<sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Remove private comprehension flags](https://github.com/RustPython/RustPython/pull/8537)</sub>  
 <sub>`2026-08` | ` PR  ` | ` Open  ` | [`     ayangweb/BongoCat     `](https://github.com/ayangweb/BongoCat) | [feat: add visual guide for macOS input monitoring permission](https://github.com/ayangweb/BongoCat/pull/1018)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`    rust-lang/rustlings    `](https://github.com/rust-lang/rustlings) | [Fix stale exercise references](https://github.com/rust-lang/rustlings/pull/2433)</sub>  
 <sub>`2026-07` | ` PR  ` | `Merged ` | [`      python/cpython       `](https://github.com/python/cpython) | [Fix inconsistencies in InternalDocs/parser.md](https://github.com/python/cpython/pull/154917)</sub>  
