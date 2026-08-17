@@ -45,7 +45,7 @@ This project automatically collects and records my contributions to external ope
 ## Features
 
 - Select contributions by repository star count and explicit inclusion or exclusion rules.
-- Hide contributions both opened and closed by the tracked user, with repository or item exceptions.
+- Keep resolved issues when the tracked user's linked pull request was merged.
 - Run automatically with GitHub Actions and commit only when the generated README changes.
 
 See the [usage guide](USAGE.md) for configuration and instructions.
