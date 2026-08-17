@@ -51,11 +51,20 @@ query Contributions($query: String!, $cursor: String) {
     nodes {
       __typename
       ... on Issue {
-        number title url state createdAt
+        number title url state createdAt body
         author { login }
         repository { nameWithOwner stargazerCount }
         lastClose: timelineItems(itemTypes: [CLOSED_EVENT], last: 1) {
           nodes { ... on ClosedEvent { actor { login } } }
+        }
+        closingPullRequests: closedByPullRequestsReferences(
+          first: 20
+          includeClosedPrs: true
+        ) {
+          nodes { author { login } mergedAt }
+        }
+        comments(last: 20) {
+          nodes { author { login } body }
         }
       }
       ... on PullRequest {
@@ -66,6 +75,17 @@ query Contributions($query: String!, $cursor: String) {
           nodes { ... on ClosedEvent { actor { login } } }
         }
       }
+    }
+  }
+}
+"""
+
+LINKED_PULL_REQUEST_QUERY = """
+query LinkedPullRequest($owner: String!, $name: String!, $number: Int!) {
+  repository(owner: $owner, name: $name) {
+    pullRequest(number: $number) {
+      author { login }
+      mergedAt
     }
   }
 }
@@ -84,7 +104,6 @@ class Config:
     include_repos: frozenset[str]
     exclude_repos: frozenset[str]
     show_self_closed_repos: frozenset[str]
-    show_self_closed_items: frozenset[str]
     status_overrides: Mapping[str, str]
 
 
@@ -165,9 +184,6 @@ def load_config(env: Mapping[str, str] | None = None) -> Config:
         show_self_closed_repos=repository_list(
             env.get("SHOW_SELF_CLOSED_REPOS", ""), "SHOW_SELF_CLOSED_REPOS"
         ),
-        show_self_closed_items=item_list(
-            env.get("SHOW_SELF_CLOSED_ITEMS", ""), "SHOW_SELF_CLOSED_ITEMS"
-        ),
         status_overrides=incorporated_prs(env.get("INCORPORATED_PRS", "")),
     )
 
@@ -178,8 +194,8 @@ class GitHub:
             raise TrackerError("GITHUB_TOKEN is required")
         self.token = token
 
-    def graphql(self, variables: Mapping[str, Any]) -> Mapping[str, Any]:
-        payload = json.dumps({"query": SEARCH_QUERY, "variables": variables}).encode()
+    def graphql(self, query: str, variables: Mapping[str, Any]) -> Mapping[str, Any]:
+        payload = json.dumps({"query": query, "variables": variables}).encode()
         headers = {
             "Accept": "application/vnd.github+json",
             "Authorization": f"Bearer {self.token}",
@@ -232,7 +248,9 @@ def search_expression(username: str, start: date | None, end: date | None) -> st
 
 
 def search_page(client: GitHub, expression: str, cursor: str | None) -> Mapping[str, Any]:
-    search = client.graphql({"query": expression, "cursor": cursor}).get("search")
+    search = client.graphql(
+        SEARCH_QUERY, {"query": expression, "cursor": cursor}
+    ).get("search")
     if not isinstance(search, dict):
         raise TrackerError(f"GitHub search returned invalid data for {expression!r}")
     return search
@@ -353,6 +371,99 @@ def contribution_key(item: Mapping[str, Any], repository: Repository) -> str:
     return f"{repository.full_name.casefold()}#{number}"
 
 
+def is_merged_pr_by(value: Any, username: str) -> bool:
+    if not isinstance(value, dict) or not isinstance(value.get("mergedAt"), str):
+        return False
+    author = value.get("author")
+    login = author.get("login") if isinstance(author, dict) else None
+    return isinstance(login, str) and login.casefold() == username.casefold()
+
+
+def linked_pr_numbers(
+    item: Mapping[str, Any], repository: Repository, username: str
+) -> set[int]:
+    texts: list[str] = []
+    body = item.get("body")
+    if isinstance(body, str):
+        texts.append(body)
+
+    comments = item.get("comments")
+    if not isinstance(comments, dict) or not isinstance(comments.get("nodes"), list):
+        raise TrackerError(f"{item.get('url', 'GitHub issue')} has invalid comments")
+    for comment in comments["nodes"]:
+        if not isinstance(comment, dict):
+            continue
+        author = comment.get("author")
+        login = author.get("login") if isinstance(author, dict) else None
+        comment_body = comment.get("body")
+        if (
+            isinstance(login, str)
+            and login.casefold() == username.casefold()
+            and isinstance(comment_body, str)
+        ):
+            texts.append(comment_body)
+
+    full_name = re.escape(repository.full_name)
+    patterns = (
+        r"(?<![\w/])#([1-9]\d*)\b",
+        rf"(?<![\w.-]){full_name}#([1-9]\d*)\b",
+        rf"https://github\.com/{full_name}/pull/([1-9]\d*)\b",
+    )
+    return {
+        int(match)
+        for text in texts
+        for pattern in patterns
+        for match in re.findall(pattern, text, flags=re.IGNORECASE)
+    }
+
+
+def linked_pr_is_merged_by(
+    client: GitHub,
+    repository: Repository,
+    number: int,
+    username: str,
+    cache: dict[str, bool],
+) -> bool:
+    key = f"{repository.full_name.casefold()}#{number}"
+    if key in cache:
+        return cache[key]
+
+    owner, _, name = repository.full_name.partition("/")
+    raw_repository = client.graphql(
+        LINKED_PULL_REQUEST_QUERY,
+        {"owner": owner, "name": name, "number": number},
+    ).get("repository")
+    if not isinstance(raw_repository, dict):
+        raise TrackerError(f"Cannot fetch linked pull request {repository.full_name}#{number}")
+    result = is_merged_pr_by(raw_repository.get("pullRequest"), username)
+    cache[key] = result
+    return result
+
+
+def issue_has_merged_work(
+    client: GitHub,
+    item: Mapping[str, Any],
+    repository: Repository,
+    username: str,
+    cache: dict[str, bool],
+) -> bool:
+    if item.get("__typename") != "Issue":
+        return False
+
+    closing = item.get("closingPullRequests")
+    if not isinstance(closing, dict) or not isinstance(closing.get("nodes"), list):
+        raise TrackerError(
+            f"{item.get('url', 'GitHub issue')} has invalid closing pull requests"
+        )
+    if any(is_merged_pr_by(pr, username) for pr in closing["nodes"]):
+        return True
+
+    return any(
+        linked_pr_is_merged_by(client, repository, number, username, cache)
+        for number in linked_pr_numbers(item, repository, username)
+    )
+
+
 def parse_time(value: Any, field: str, url: str) -> datetime:
     if not isinstance(value, str):
         raise TrackerError(f"{url} is missing {field}")
@@ -427,24 +538,33 @@ def normalize_item(
 
 def contributions(client: GitHub, config: Config) -> list[Contribution]:
     cache: dict[str, Repository] = {}
+    linked_pr_cache: dict[str, bool] = {}
     result: list[Contribution] = []
     hidden_self_closed = 0
+    linked_issues = 0
     for item in fetch_authored_items(client, config.username):
         repository = repository_metadata(item, cache)
         owner = repository.full_name.partition("/")[0]
         if owner.casefold() == config.username.casefold() or not should_include(repository, config):
             continue
-        if (
-            repository.full_name.casefold() not in config.show_self_closed_repos
-            and contribution_key(item, repository) not in config.show_self_closed_items
-            and is_authored_and_closed_by(item, config.username)
-        ):
-            hidden_self_closed += 1
-            continue
+        if is_authored_and_closed_by(item, config.username):
+            key = contribution_key(item, repository)
+            if (
+                repository.full_name.casefold() not in config.show_self_closed_repos
+                and key not in config.status_overrides
+            ):
+                if issue_has_merged_work(
+                    client, item, repository, config.username, linked_pr_cache
+                ):
+                    linked_issues += 1
+                else:
+                    hidden_self_closed += 1
+                    continue
         result.append(normalize_item(item, repository, config))
     log(
         f"Rendering {len(result)} contributions from {len(cache)} repositories; "
-        f"hid {hidden_self_closed} items authored and closed by {config.username}"
+        f"hid {hidden_self_closed} items authored and closed by {config.username}; "
+        f"kept {linked_issues} linked issue(s)"
     )
     return sorted(result, key=lambda item: item.created_at, reverse=True)
 
