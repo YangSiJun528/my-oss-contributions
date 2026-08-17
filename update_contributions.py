@@ -53,10 +53,16 @@ query Contributions($query: String!, $cursor: String) {
       ... on Issue {
         number title url state createdAt
         repository { nameWithOwner stargazerCount }
+        lastClose: timelineItems(itemTypes: [CLOSED_EVENT], last: 1) {
+          nodes { ... on ClosedEvent { actor { login } } }
+        }
       }
       ... on PullRequest {
         number title url state createdAt mergedAt
         repository { nameWithOwner stargazerCount }
+        lastClose: timelineItems(itemTypes: [CLOSED_EVENT], last: 1) {
+          nodes { ... on ClosedEvent { actor { login } } }
+        }
       }
     }
   }
@@ -75,6 +81,7 @@ class Config:
     min_stars: int
     include_repos: frozenset[str]
     exclude_repos: frozenset[str]
+    show_self_closed_repos: frozenset[str]
     status_overrides: Mapping[str, str]
 
 
@@ -148,6 +155,9 @@ def load_config(env: Mapping[str, str] | None = None) -> Config:
         min_stars=min_stars,
         include_repos=repository_list(env.get("INCLUDE_REPOS", ""), "INCLUDE_REPOS"),
         exclude_repos=repository_list(env.get("EXCLUDE_REPOS", ""), "EXCLUDE_REPOS"),
+        show_self_closed_repos=repository_list(
+            env.get("SHOW_SELF_CLOSED_REPOS", ""), "SHOW_SELF_CLOSED_REPOS"
+        ),
         status_overrides=incorporated_prs(env.get("INCORPORATED_PRS", "")),
     )
 
@@ -299,6 +309,28 @@ def should_include(repository: Repository, config: Config) -> bool:
     return repository.stars >= config.min_stars
 
 
+def is_self_closed(item: Mapping[str, Any], username: str) -> bool:
+    state = item.get("state")
+    if not isinstance(state, str):
+        raise TrackerError(f"{item.get('url', 'GitHub item')} is missing state")
+    if state.upper() != "CLOSED":
+        return False
+
+    last_close = item.get("lastClose")
+    if not isinstance(last_close, dict) or not isinstance(last_close.get("nodes"), list):
+        raise TrackerError(
+            f"{item.get('url', 'GitHub item')} has invalid close event data"
+        )
+    nodes = last_close["nodes"]
+    if not nodes:
+        return False
+
+    event = nodes[-1]
+    actor = event.get("actor") if isinstance(event, dict) else None
+    login = actor.get("login") if isinstance(actor, dict) else None
+    return isinstance(login, str) and login.casefold() == username.casefold()
+
+
 def parse_time(value: Any, field: str, url: str) -> datetime:
     if not isinstance(value, str):
         raise TrackerError(f"{url} is missing {field}")
@@ -374,13 +406,23 @@ def normalize_item(
 def contributions(client: GitHub, config: Config) -> list[Contribution]:
     cache: dict[str, Repository] = {}
     result: list[Contribution] = []
+    hidden_self_closed = 0
     for item in fetch_authored_items(client, config.username):
         repository = repository_metadata(item, cache)
         owner = repository.full_name.partition("/")[0]
         if owner.casefold() == config.username.casefold() or not should_include(repository, config):
             continue
+        if (
+            repository.full_name.casefold() not in config.show_self_closed_repos
+            and is_self_closed(item, config.username)
+        ):
+            hidden_self_closed += 1
+            continue
         result.append(normalize_item(item, repository, config))
-    log(f"Rendering {len(result)} contributions from {len(cache)} repositories")
+    log(
+        f"Rendering {len(result)} contributions from {len(cache)} repositories; "
+        f"hid {hidden_self_closed} self-closed items"
+    )
     return sorted(result, key=lambda item: item.created_at, reverse=True)
 
 
