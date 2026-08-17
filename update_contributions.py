@@ -84,6 +84,7 @@ class Config:
     include_repos: frozenset[str]
     exclude_repos: frozenset[str]
     show_self_closed_repos: frozenset[str]
+    show_self_closed_items: frozenset[str]
     status_overrides: Mapping[str, str]
 
 
@@ -126,16 +127,20 @@ def repository_list(raw: str, source: str) -> frozenset[str]:
     )
 
 
-def incorporated_prs(raw: str) -> dict[str, str]:
-    overrides: dict[str, str] = {}
+def item_list(raw: str, source: str) -> frozenset[str]:
+    items: set[str] = set()
     for value in filter(None, (part.strip() for part in raw.split(","))):
         match = re.fullmatch(r"([^/#\s]+/[^/#\s]+)#([1-9]\d*)", value)
         if not match:
             raise TrackerError(
-                f"INCORPORATED_PRS contains invalid value {value!r}; expected owner/repo#number"
+                f"{source} contains invalid value {value!r}; expected owner/repo#number"
             )
-        overrides[f"{match.group(1).casefold()}#{match.group(2)}"] = "Adopted"
-    return overrides
+        items.add(f"{match.group(1).casefold()}#{match.group(2)}")
+    return frozenset(items)
+
+
+def incorporated_prs(raw: str) -> dict[str, str]:
+    return {key: "Adopted" for key in item_list(raw, "INCORPORATED_PRS")}
 
 
 def load_config(env: Mapping[str, str] | None = None) -> Config:
@@ -159,6 +164,9 @@ def load_config(env: Mapping[str, str] | None = None) -> Config:
         exclude_repos=repository_list(env.get("EXCLUDE_REPOS", ""), "EXCLUDE_REPOS"),
         show_self_closed_repos=repository_list(
             env.get("SHOW_SELF_CLOSED_REPOS", ""), "SHOW_SELF_CLOSED_REPOS"
+        ),
+        show_self_closed_items=item_list(
+            env.get("SHOW_SELF_CLOSED_ITEMS", ""), "SHOW_SELF_CLOSED_ITEMS"
         ),
         status_overrides=incorporated_prs(env.get("INCORPORATED_PRS", "")),
     )
@@ -338,6 +346,13 @@ def is_authored_and_closed_by(item: Mapping[str, Any], username: str) -> bool:
     return isinstance(login, str) and login.casefold() == username.casefold()
 
 
+def contribution_key(item: Mapping[str, Any], repository: Repository) -> str:
+    number = item.get("number")
+    if not isinstance(number, int):
+        raise TrackerError(f"{item.get('url', 'GitHub item')} is missing number")
+    return f"{repository.full_name.casefold()}#{number}"
+
+
 def parse_time(value: Any, field: str, url: str) -> datetime:
     if not isinstance(value, str):
         raise TrackerError(f"{url} is missing {field}")
@@ -421,6 +436,7 @@ def contributions(client: GitHub, config: Config) -> list[Contribution]:
             continue
         if (
             repository.full_name.casefold() not in config.show_self_closed_repos
+            and contribution_key(item, repository) not in config.show_self_closed_items
             and is_authored_and_closed_by(item, config.username)
         ):
             hidden_self_closed += 1
