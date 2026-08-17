@@ -52,6 +52,7 @@ query Contributions($query: String!, $cursor: String) {
       __typename
       ... on Issue {
         number title url state createdAt
+        author { login }
         repository { nameWithOwner stargazerCount }
         lastClose: timelineItems(itemTypes: [CLOSED_EVENT], last: 1) {
           nodes { ... on ClosedEvent { actor { login } } }
@@ -59,6 +60,7 @@ query Contributions($query: String!, $cursor: String) {
       }
       ... on PullRequest {
         number title url state createdAt mergedAt
+        author { login }
         repository { nameWithOwner stargazerCount }
         lastClose: timelineItems(itemTypes: [CLOSED_EVENT], last: 1) {
           nodes { ... on ClosedEvent { actor { login } } }
@@ -309,11 +311,16 @@ def should_include(repository: Repository, config: Config) -> bool:
     return repository.stars >= config.min_stars
 
 
-def is_self_closed(item: Mapping[str, Any], username: str) -> bool:
+def is_authored_and_closed_by(item: Mapping[str, Any], username: str) -> bool:
     state = item.get("state")
     if not isinstance(state, str):
         raise TrackerError(f"{item.get('url', 'GitHub item')} is missing state")
     if state.upper() != "CLOSED":
+        return False
+
+    author = item.get("author")
+    author_login = author.get("login") if isinstance(author, dict) else None
+    if not isinstance(author_login, str) or author_login.casefold() != username.casefold():
         return False
 
     last_close = item.get("lastClose")
@@ -414,14 +421,14 @@ def contributions(client: GitHub, config: Config) -> list[Contribution]:
             continue
         if (
             repository.full_name.casefold() not in config.show_self_closed_repos
-            and is_self_closed(item, config.username)
+            and is_authored_and_closed_by(item, config.username)
         ):
             hidden_self_closed += 1
             continue
         result.append(normalize_item(item, repository, config))
     log(
         f"Rendering {len(result)} contributions from {len(cache)} repositories; "
-        f"hid {hidden_self_closed} self-closed items"
+        f"hid {hidden_self_closed} items authored and closed by {config.username}"
     )
     return sorted(result, key=lambda item: item.created_at, reverse=True)
 

@@ -13,7 +13,7 @@ GitHub 저장소의 **Settings → Secrets and variables → Actions → Variabl
 | `MIN_STARS` | `100` | 저장소의 최소 현재 star 수 |
 | `INCLUDE_REPOS` | 빈 값 | star 수와 관계없이 포함할 저장소 |
 | `EXCLUDE_REPOS` | 빈 값 | 항상 제외할 저장소 |
-| `SHOW_SELF_CLOSED_REPOS` | 빈 값 | 작성자가 직접 닫은 항목도 표시할 저장소 |
+| `SHOW_SELF_CLOSED_REPOS` | 빈 값 | 추적 사용자가 만들고 직접 닫은 항목도 표시할 저장소 |
 | `INCORPORATED_PRS` | 빈 값 | `Adopted`로 표시할 PR |
 
 여러 값은 쉼표로 구분합니다. 대소문자는 구분하지 않고 각 값의 앞뒤 공백은 제거합니다.
@@ -31,9 +31,9 @@ INCORPORATED_PRS=spring-projects/spring-framework#12345,owner/repo#456
 2. `EXCLUDE_REPOS`에 있으면 제외합니다.
 3. `INCLUDE_REPOS`에 있으면 포함합니다.
 4. 나머지는 star 수가 `MIN_STARS` 이상일 때 포함합니다.
-5. 작성자 본인이 마지막으로 닫은 Issue와 unmerged PR은 기본적으로 제외합니다.
+5. `GITHUB_USERNAME`이 생성했고 마지막 종료자도 같은 사용자인 Issue와 unmerged PR은 기본적으로 제외합니다.
 
-`SHOW_SELF_CLOSED_REPOS`에 등록한 저장소는 5번 필터만 적용하지 않습니다. 이 설정은 `EXCLUDE_REPOS`나 star 조건을 무시하지 않으므로, star가 낮은 저장소라면 `INCLUDE_REPOS`에도 함께 등록해야 합니다. 종료자가 삭제된 계정이거나 GitHub에서 확인되지 않으면 임의로 제외하지 않습니다.
+`SHOW_SELF_CLOSED_REPOS`에 등록한 저장소는 5번 필터만 적용하지 않습니다. 이 설정은 `EXCLUDE_REPOS`나 star 조건을 무시하지 않으므로, star가 낮은 저장소라면 `INCLUDE_REPOS`에도 함께 등록해야 합니다. 생성자와 마지막 종료자가 모두 `GITHUB_USERNAME`과 일치할 때만 제외하며, 둘 중 하나라도 다르거나 GitHub에서 확인되지 않으면 표시합니다.
 
 PR 상태는 명시적 override, GitHub의 merged 상태, open 상태, closed 상태 순서로 결정합니다. `INCORPORATED_PRS`에 등록한 PR은 `Adopted`로 표시하며, 그 외 closed/unmerged PR을 임의로 수락 또는 거절로 해석하지 않습니다.
 
