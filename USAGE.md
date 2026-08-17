@@ -1,6 +1,24 @@
 # 사용법
 
-이 도구는 GitHub에서 작성한 외부 저장소의 Issue와 Pull Request를 찾아 `README.md`로 만듭니다. Python 표준 라이브러리와 GitHub GraphQL API만 사용하는 독립 구현입니다.
+이 도구는 GitHub에서 작성한 외부 오픈소스 Issue와 Pull Request를 찾아 `README.md`로 자동 관리합니다. Python 표준 라이브러리와 GitHub GraphQL API만 사용하는 독립 구현입니다.
+
+## 기본 정책
+
+기본 설정은 의미 있는 외부 기여 내역을 유지하면서 불필요한 기록을 줄이는 데 초점을 둡니다.
+
+- 추적 사용자가 소유한 저장소의 활동은 개인 작업으로 보고 제외합니다.
+- star 기준에 미달하는 저장소는 제외합니다.
+- 추적 사용자가 직접 만들고 닫은 항목은 반영 전에 철회했거나 실수로 발생한 작업일 가능성이 있어 제외합니다.
+- 직접 닫은 Issue라도 추적 사용자가 작성한 merged PR로 해결된 것이 확인되면 유지합니다.
+
+이는 기여의 성공 여부를 자동 판정하는 규칙이 아니라 목록의 노이즈를 줄이기 위한 기본값입니다. maintainer가 닫은 unmerged PR은 자동으로 제외하지 않으며 `Closed` 상태 그대로 기록합니다.
+
+필요한 경우 다음과 같이 예외를 설정할 수 있습니다.
+
+- star가 낮지만 표시할 저장소: `INCLUDE_REPOS`
+- 조건과 관계없이 제외할 저장소: `EXCLUDE_REPOS`
+- 직접 만들고 닫은 항목도 표시할 저장소: `SHOW_SELF_CLOSED_REPOS`
+- maintainer가 별도 commit으로 반영한 closed PR: `INCORPORATED_PRS`
 
 ## 설정
 
