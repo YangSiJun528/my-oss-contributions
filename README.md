@@ -23,6 +23,7 @@ My open-source contributions.
 <sub>`2025-12` | ` PR  ` | `Closed ` | [`        apache/iggy        `](https://github.com/apache/iggy) | [feat(java): add JMH benchmark infrastructure](https://github.com/apache/iggy/pull/2441)</sub>  
 <sub>`2025-12` | `Issue` | `Closed ` | [`        apache/iggy        `](https://github.com/apache/iggy) | [\[Java SDK\] ByteBuf Memory Leak in Blocking TCP Client](https://github.com/apache/iggy/issues/2424)</sub>  
 <sub>`2025-11` | ` PR  ` | `Merged ` | [`        apache/iggy        `](https://github.com/apache/iggy) | [chore(docs): clarify root credentials behavior and lifecycle](https://github.com/apache/iggy/pull/2312)</sub>  
+<sub>`2025-11` | `Issue` | `Closed ` | [`        apache/iggy        `](https://github.com/apache/iggy) | [Clarify that --with-default-root-credentials only apply on first server start](https://github.com/apache/iggy/issues/2308)</sub>  
 <sub>`2025-09` | ` PR  ` | `Adopted` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Update documentation and tests for the v2.3 metadata format](https://github.com/spring-io/initializr/pull/1697)</sub>  
 <sub>`2025-08` | ` PR  ` | `Adopted` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [ConfigurationFileFormat isn't copied in the description copy and is missing in th...](https://github.com/spring-io/initializr/pull/1693 "ConfigurationFileFormat isn't copied in the description copy and is missing in the diff")</sub>  
 <sub>`2025-08` | ` PR  ` | `Adopted` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Add compliance tests for gradle settings](https://github.com/spring-io/initializr/pull/1685)</sub>  
@@ -44,7 +45,7 @@ This project automatically collects and records my contributions to external ope
 ## Features
 
 - Select contributions by repository star count and explicit inclusion or exclusion rules.
-- Hide contributions both opened and closed by the tracked user, with per-repository exceptions.
+- Hide contributions both opened and closed by the tracked user, with repository or item exceptions.
 - Run automatically with GitHub Actions and commit only when the generated README changes.
 
 See the [usage guide](USAGE.md) for configuration and instructions.
