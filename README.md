@@ -1,7 +1,5 @@
 # Open Source Contributions
 
-My open-source contributions.
-
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Expose symbol scopes through _symtable](https://github.com/RustPython/RustPython/pull/8538)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Remove private comprehension flags](https://github.com/RustPython/RustPython/pull/8537)</sub>  
 <sub>`2026-08` | ` PR  ` | ` Open  ` | [`     ayangweb/BongoCat     `](https://github.com/ayangweb/BongoCat) | [feat: add visual guide for macOS input monitoring permission](https://github.com/ayangweb/BongoCat/pull/1018)</sub>  
@@ -38,19 +36,8 @@ My open-source contributions.
 <sub>`2023-12` | ` PR  ` | `Merged ` | [`   obsidian-translations   `](https://github.com/obsidianmd/obsidian-translations "obsidianmd/obsidian-translations") | [Update ko.json](https://github.com/obsidianmd/obsidian-translations/pull/906)</sub>  
 <sub>`2023-11` | ` PR  ` | `Merged ` | [`      spring-security      `](https://github.com/spring-projects/spring-security "spring-projects/spring-security") | [Update Javadoc Comments in AuthorizationEvent Class](https://github.com/spring-projects/spring-security/pull/14175)</sub>
 
-# About This Project
+## About
 
-This project automatically maintains a Markdown record of my contributions to external open-source projects.
+An open-source contribution tracker with sensible defaults for filtering personal repositories, accidental activity, and other noise.
 
-Sensible defaults keep the record focused by excluding repositories owned by the tracked user and items that user both opened and closed. These items may represent work that was withdrawn before adoption or created by mistake. Issues are still retained when a linked pull request by the tracked user was merged.
-
-For example, exceptions can allow a low-star repository (`INCLUDE_REPOS`), retain self-closed items from a selected repository (`SHOW_SELF_CLOSED_REPOS`), or mark a pull request incorporated through a maintainer's separate commit as `Adopted` (`INCORPORATED_PRS`).
-
-## Features
-
-- Filter repositories by star count and explicit inclusion or exclusion rules.
-- Exclude personal repositories and likely abandoned or accidental activity by default.
-- Preserve resolved issues and support repository-level and PR-status exceptions.
-- Run automatically with GitHub Actions and commit only when the generated README changes.
-
-See the [usage guide](USAGE.md) for configuration and instructions.
+See [USAGE.md](USAGE.md) for configuration.
