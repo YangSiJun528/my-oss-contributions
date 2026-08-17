@@ -21,7 +21,6 @@ from urllib.request import Request, urlopen
 
 API_URL = "https://api.github.com/graphql"
 API_VERSION = "2022-11-28"
-DEFAULT_USERNAME = "YangSiJun528"
 DEFAULT_TITLE = "Open Source Contributions"
 DEFAULT_MIN_STARS = 100
 SEARCH_LIMIT = 1_000
@@ -164,7 +163,9 @@ def incorporated_prs(raw: str) -> dict[str, str]:
 
 def load_config(env: Mapping[str, str] | None = None) -> Config:
     env = os.environ if env is None else env
-    username = setting(env, "GITHUB_USERNAME", DEFAULT_USERNAME)
+    username = env.get("GITHUB_USERNAME", "").strip()
+    if not username:
+        raise TrackerError("GITHUB_USERNAME is required")
     if not re.fullmatch(r"[A-Za-z0-9-]+", username):
         raise TrackerError(f"GITHUB_USERNAME is invalid: {username!r}")
 

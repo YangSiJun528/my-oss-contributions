@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ github.token }}
-      GITHUB_USERNAME: ${{ vars.GITHUB_USERNAME }}
+      GITHUB_USERNAME: ${{ vars.TRACKED_GITHUB_USERNAME }}
       TITLE: ${{ vars.TITLE }}
       MIN_STARS: ${{ vars.MIN_STARS }}
       INCLUDE_REPOS: ${{ vars.INCLUDE_REPOS }}
