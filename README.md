@@ -2,7 +2,7 @@
 
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Expose symbol scopes through _symtable](https://github.com/RustPython/RustPython/pull/8538)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Remove private comprehension flags](https://github.com/RustPython/RustPython/pull/8537)</sub>  
-<sub>`2026-08` | ` PR  ` | ` Open  ` | [`     ayangweb/BongoCat     `](https://github.com/ayangweb/BongoCat) | [feat: add visual guide for macOS input monitoring permission](https://github.com/ayangweb/BongoCat/pull/1018)</sub>  
+<sub>`2026-08` | ` PR  ` | ` Open  ` | [`   BongoCatPet/BongoCat    `](https://github.com/BongoCatPet/BongoCat) | [feat: add visual guide for macOS input monitoring permission](https://github.com/BongoCatPet/BongoCat/pull/1018)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`    rust-lang/rustlings    `](https://github.com/rust-lang/rustlings) | [Fix stale exercise references](https://github.com/rust-lang/rustlings/pull/2433)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`  eoncheole/rustlings-kr   `](https://github.com/eoncheole/rustlings-kr) | [Rust 책 영문 및 한국어 링크 수정](https://github.com/eoncheole/rustlings-kr/pull/4)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`  eoncheole/rustlings-kr   `](https://github.com/eoncheole/rustlings-kr) | [Rustlings upstream/main 동기화 및 한국어 번역](https://github.com/eoncheole/rustlings-kr/pull/3)</sub>  
