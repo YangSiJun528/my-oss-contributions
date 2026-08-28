@@ -1,5 +1,6 @@
 # Open Source Contributions
 
+<sub>`2026-08` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Assert expected exceptions in web tests](https://github.com/spring-io/initializr/pull/1821)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Expose symbol scopes through _symtable](https://github.com/RustPython/RustPython/pull/8538)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Remove private comprehension flags](https://github.com/RustPython/RustPython/pull/8537)</sub>  
 <sub>`2026-08` | ` PR  ` | ` Open  ` | [`     ayangweb/BongoCat     `](https://github.com/ayangweb/BongoCat) | [feat: add visual guide for macOS input monitoring permission](https://github.com/ayangweb/BongoCat/pull/1018)</sub>  

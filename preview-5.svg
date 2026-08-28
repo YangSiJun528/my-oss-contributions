@@ -31,9 +31,9 @@
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
     <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
-    <text class="repo" x="224" y="17">RustPython/RustPython</text>
-    <text class="item" x="425" y="17">Expose symbol scopes through _symtable</text>
+    <text class="mono" x="173" y="16" text-anchor="middle">Open</text>
+    <text class="repo" x="224" y="17">spring-io/initializr</text>
+    <text class="item" x="425" y="17">Assert expected exceptions in web tests</text>
   </g>
   <g transform="translate(22 88)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -43,9 +43,19 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">RustPython/RustPython</text>
-    <text class="item" x="425" y="17">Remove private comprehension flags</text>
+    <text class="item" x="425" y="17">Expose symbol scopes through _symtable</text>
   </g>
   <g transform="translate(22 120)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-08</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">RustPython/RustPython</text>
+    <text class="item" x="425" y="17">Remove private comprehension flags</text>
+  </g>
+  <g transform="translate(22 152)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-08</text>
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
@@ -55,7 +65,7 @@
     <text class="repo" x="224" y="17">ayangweb/BongoCat</text>
     <text class="item" x="425" y="17">feat: add visual guide for macOS input monitoring permission</text>
   </g>
-  <g transform="translate(22 152)">
+  <g transform="translate(22 184)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-08</text>
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
@@ -64,16 +74,6 @@
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">rust-lang/rustlings</text>
     <text class="item" x="425" y="17">Fix stale exercise references</text>
-  </g>
-  <g transform="translate(22 184)">
-    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
-    <text class="mono" x="33" y="16" text-anchor="middle">2026-08</text>
-    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
-    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
-    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
-    <text class="repo" x="224" y="17">eoncheole/rustlings-kr</text>
-    <text class="item" x="425" y="17">Rust 책 영문 및 한국어 링크 수정</text>
   </g>
 
   <text class="more" x="938" y="226" text-anchor="end">View all contributions →</text>
