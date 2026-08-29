@@ -31,9 +31,9 @@
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
     <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="mono" x="173" y="16" text-anchor="middle">Open</text>
     <text class="repo" x="224" y="17">spring-io/initializr</text>
-    <text class="item" x="425" y="17">MustacheTemplateRenderer doesn&#x27;t close the reader</text>
+    <text class="item" x="425" y="17">Fix incorrect project URLs in published Maven POMs</text>
   </g>
   <g transform="translate(22 88)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -43,7 +43,7 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">spring-io/initializr</text>
-    <text class="item" x="425" y="17">Use AssertJ to assert on exceptions</text>
+    <text class="item" x="425" y="17">MustacheTemplateRenderer doesn&#x27;t close the reader</text>
   </g>
   <g transform="translate(22 120)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -52,8 +52,8 @@
     <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
-    <text class="repo" x="224" y="17">RustPython/RustPython</text>
-    <text class="item" x="425" y="17">Expose symbol scopes through _symtable</text>
+    <text class="repo" x="224" y="17">spring-io/initializr</text>
+    <text class="item" x="425" y="17">Use AssertJ to assert on exceptions</text>
   </g>
   <g transform="translate(22 152)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -63,7 +63,7 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">RustPython/RustPython</text>
-    <text class="item" x="425" y="17">Remove private comprehension flags</text>
+    <text class="item" x="425" y="17">Expose symbol scopes through _symtable</text>
   </g>
   <g transform="translate(22 184)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -71,9 +71,9 @@
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
     <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Open</text>
-    <text class="repo" x="224" y="17">ayangweb/BongoCat</text>
-    <text class="item" x="425" y="17">feat: add visual guide for macOS input monitoring permission</text>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">RustPython/RustPython</text>
+    <text class="item" x="425" y="17">Remove private comprehension flags</text>
   </g>
 
   <text class="more" x="938" y="226" text-anchor="end">View all contributions →</text>

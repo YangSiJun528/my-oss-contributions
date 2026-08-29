@@ -1,5 +1,6 @@
 # Open Source Contributions
 
+<sub>`2026-08` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix incorrect project URLs in published Maven POMs](https://github.com/spring-io/initializr/pull/1823)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [MustacheTemplateRenderer doesn't close the reader](https://github.com/spring-io/initializr/pull/1822)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Use AssertJ to assert on exceptions](https://github.com/spring-io/initializr/pull/1821)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Expose symbol scopes through _symtable](https://github.com/RustPython/RustPython/pull/8538)</sub>  
