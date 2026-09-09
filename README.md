@@ -1,5 +1,6 @@
 # Open Source Contributions
 
+<sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix documentation overview partintro block](https://github.com/spring-io/initializr/pull/1832)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Remove duplicate SpringJUnit5Check declaration in Checkstyle](https://github.com/spring-io/initializr/pull/1831)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Update Java requirement in CONTRIBUTING](https://github.com/spring-io/initializr/pull/1830)</sub>  
 <sub>`2026-08` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix incorrect project URLs in published Maven POMs](https://github.com/spring-io/initializr/pull/1823)</sub>  
