@@ -29,11 +29,11 @@
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-09</text>
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
-    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <text class="mono" x="102" y="16" text-anchor="middle">Issue</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
-    <text class="repo" x="224" y="17">spring-io/initializr</text>
-    <text class="item" x="425" y="17">Fix documentation overview partintro block</text>
+    <text class="mono" x="173" y="16" text-anchor="middle">Open</text>
+    <text class="repo" x="224" y="17">hackers-pub/hackerspub</text>
+    <text class="item" x="425" y="17">Disable the Register button for an empty passkey name</text>
   </g>
   <g transform="translate(22 88)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -43,7 +43,7 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">spring-io/initializr</text>
-    <text class="item" x="425" y="17">Remove duplicate SpringJUnit5Check declaration in Checkstyle</text>
+    <text class="item" x="425" y="17">Fix documentation overview partintro block</text>
   </g>
   <g transform="translate(22 120)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -53,17 +53,17 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">spring-io/initializr</text>
-    <text class="item" x="425" y="17">Update Java requirement in CONTRIBUTING</text>
+    <text class="item" x="425" y="17">Remove duplicate SpringJUnit5Check declaration in Checkstyle</text>
   </g>
   <g transform="translate(22 152)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
-    <text class="mono" x="33" y="16" text-anchor="middle">2026-08</text>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-09</text>
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
     <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">spring-io/initializr</text>
-    <text class="item" x="425" y="17">Fix incorrect project URLs in published Maven POMs</text>
+    <text class="item" x="425" y="17">Update Java requirement in CONTRIBUTING</text>
   </g>
   <g transform="translate(22 184)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -73,7 +73,7 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">spring-io/initializr</text>
-    <text class="item" x="425" y="17">MustacheTemplateRenderer doesn&#x27;t close the reader</text>
+    <text class="item" x="425" y="17">Fix incorrect project URLs in published Maven POMs</text>
   </g>
 
   <text class="more" x="938" y="226" text-anchor="end">View all contributions →</text>

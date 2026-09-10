@@ -1,5 +1,6 @@
 # Open Source Contributions
 
+<sub>`2026-09` | `Issue` | ` Open  ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable the Register button for an empty passkey name](https://github.com/hackers-pub/hackerspub/issues/393)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix documentation overview partintro block](https://github.com/spring-io/initializr/pull/1832)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Remove duplicate SpringJUnit5Check declaration in Checkstyle](https://github.com/spring-io/initializr/pull/1831)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Update Java requirement in CONTRIBUTING](https://github.com/spring-io/initializr/pull/1830)</sub>  
