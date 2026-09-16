@@ -1,6 +1,7 @@
 # Open Source Contributions
 
-<sub>`2026-09` | ` PR  ` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Return distinct empty lists from select()](https://github.com/RustPython/RustPython/pull/8720)</sub>  
+<sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Disable Javadoc checks for missing documentation](https://github.com/spring-io/initializr/pull/1843)</sub>  
+<sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Return distinct empty lists from select()](https://github.com/RustPython/RustPython/pull/8720)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix null argument handling in CodeBlock](https://github.com/spring-io/initializr/pull/1842)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Improve null safety](https://github.com/spring-io/initializr/pull/1838)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Enum constants with class bodies as annotation values emit invalid code](https://github.com/spring-io/initializr/pull/1837)</sub>  
