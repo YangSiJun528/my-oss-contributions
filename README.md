@@ -1,6 +1,6 @@
 # Open Source Contributions
 
-<sub>`2026-09` | ` PR  ` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Implement os.pread and os.pwrite](https://github.com/RustPython/RustPython/pull/8730)</sub>  
+<sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Implement os.pread and os.pwrite](https://github.com/RustPython/RustPython/pull/8730)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Disable Javadoc checks for missing documentation](https://github.com/spring-io/initializr/pull/1843)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Return distinct empty lists from select()](https://github.com/RustPython/RustPython/pull/8720)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix null argument handling in CodeBlock](https://github.com/spring-io/initializr/pull/1842)</sub>  
