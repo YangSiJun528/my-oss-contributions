@@ -23,8 +23,6 @@ jobs:
       MIN_STARS: ${{ vars.MIN_STARS }}
       INCLUDE_REPOS: ${{ vars.INCLUDE_REPOS }}
       EXCLUDE_REPOS: ${{ vars.EXCLUDE_REPOS }}
-      INCLUDE_ITEMS: ${{ vars.INCLUDE_ITEMS }}
-      EXCLUDE_ITEMS: ${{ vars.EXCLUDE_ITEMS }}
       SHOW_SELF_CLOSED_REPOS: ${{ vars.SHOW_SELF_CLOSED_REPOS }}
       INCORPORATED_PRS: ${{ vars.INCORPORATED_PRS }}
 

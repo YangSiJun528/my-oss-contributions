@@ -102,8 +102,6 @@ class Config:
     min_stars: int
     include_repos: frozenset[str]
     exclude_repos: frozenset[str]
-    include_items: frozenset[str]
-    exclude_items: frozenset[str]
     show_self_closed_repos: frozenset[str]
     status_overrides: Mapping[str, str]
 
@@ -184,8 +182,6 @@ def load_config(env: Mapping[str, str] | None = None) -> Config:
         min_stars=min_stars,
         include_repos=repository_list(env.get("INCLUDE_REPOS", ""), "INCLUDE_REPOS"),
         exclude_repos=repository_list(env.get("EXCLUDE_REPOS", ""), "EXCLUDE_REPOS"),
-        include_items=item_list(env.get("INCLUDE_ITEMS", ""), "INCLUDE_ITEMS"),
-        exclude_items=item_list(env.get("EXCLUDE_ITEMS", ""), "EXCLUDE_ITEMS"),
         show_self_closed_repos=repository_list(
             env.get("SHOW_SELF_CLOSED_REPOS", ""), "SHOW_SELF_CLOSED_REPOS"
         ),
@@ -545,25 +541,15 @@ def contributions(client: GitHub, config: Config) -> list[Contribution]:
     cache: dict[str, Repository] = {}
     linked_pr_cache: dict[str, bool] = {}
     result: list[Contribution] = []
-    explicitly_included = 0
-    explicitly_excluded = 0
     hidden_self_closed = 0
     linked_issues = 0
     for item in fetch_authored_items(client, config.username):
         repository = repository_metadata(item, cache)
-        key = contribution_key(item, repository)
-        if key in config.exclude_items:
-            explicitly_excluded += 1
-            continue
-        if key in config.include_items:
-            explicitly_included += 1
-            result.append(normalize_item(item, repository, config))
-            continue
-
         owner = repository.full_name.partition("/")[0]
         if owner.casefold() == config.username.casefold() or not should_include(repository, config):
             continue
         if is_authored_and_closed_by(item, config.username):
+            key = contribution_key(item, repository)
             if (
                 repository.full_name.casefold() not in config.show_self_closed_repos
                 and key not in config.status_overrides
@@ -578,8 +564,6 @@ def contributions(client: GitHub, config: Config) -> list[Contribution]:
         result.append(normalize_item(item, repository, config))
     log(
         f"Rendering {len(result)} contributions from {len(cache)} repositories; "
-        f"included {explicitly_included} configured item(s); "
-        f"excluded {explicitly_excluded} configured item(s); "
         f"hid {hidden_self_closed} items authored and closed by {config.username}; "
         f"kept {linked_issues} linked issue(s)"
     )
