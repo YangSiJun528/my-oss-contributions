@@ -1,5 +1,7 @@
 # Open Source Contributions
 
+<sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [`ContextVar` values leak between interpreters](https://github.com/RustPython/RustPython/issues/8765)</sub>  
+<sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [dataclasses classes are not garbage-collected](https://github.com/RustPython/RustPython/issues/8764)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable Register for an empty passkey name](https://github.com/hackers-pub/hackerspub/pull/405)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Implement os.pread and os.pwrite](https://github.com/RustPython/RustPython/pull/8730)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Disable Javadoc checks for missing documentation](https://github.com/spring-io/initializr/pull/1843)</sub>  
