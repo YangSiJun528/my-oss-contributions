@@ -1,6 +1,6 @@
 # Usage
 
-This tool collects Issues and Pull Requests authored by a configured GitHub user in external open-source repositories and automatically maintains a contribution timeline in `README.md`.
+This tool collects Issues and Pull Requests authored by a configured GitHub user and automatically maintains a contribution timeline in `README.md`. By default, it focuses on external open-source repositories.
 
 Rather than listing every activity, it filters personal repositories and work that may be noise, such as items the tracked user created and later closed. Most filtering rules can be adjusted with explicit exceptions.
 
@@ -16,12 +16,7 @@ The defaults are designed to preserve meaningful external contributions while re
 
 These rules reduce noise; they do not judge whether a contribution succeeded or failed.
 
-Use the following settings when an explicit exception is needed:
-
-- `INCLUDE_REPOS`: include repositories regardless of star count.
-- `EXCLUDE_REPOS`: always exclude selected repositories.
-- `SHOW_SELF_CLOSED_REPOS`: retain self-closed items from selected repositories.
-- `INCORPORATED_PRS`: mark Pull Requests applied through a maintainer's separate commit as `Adopted`.
+You can include or exclude entire repositories or individual contributions, retain self-closed work, and mark contributions adopted through a maintainer's separate commit.
 
 ## Configuration
 
@@ -33,7 +28,9 @@ Add Repository Variables under **Settings → Secrets and variables → Actions 
 | `TITLE` | `Open Source Contributions` | Generated README title |
 | `MIN_STARS` | `100` | Minimum current repository star count |
 | `INCLUDE_REPOS` | Empty | Repositories included regardless of star count |
-| `EXCLUDE_REPOS` | Empty | Repositories always excluded |
+| `EXCLUDE_REPOS` | Empty | Repositories excluded unless a contribution is explicitly included |
+| `INCLUDE_ITEMS` | Empty | Individual Issues or Pull Requests to include |
+| `EXCLUDE_ITEMS` | Empty | Individual Issues or Pull Requests to exclude |
 | `SHOW_SELF_CLOSED_REPOS` | Empty | Repositories whose self-closed items remain visible |
 | `INCORPORATED_PRS` | Empty | Pull Requests displayed as `Adopted` |
 
@@ -49,24 +46,39 @@ Comma-separated values are trimmed and compared case-insensitively.
 TRACKED_GITHUB_USERNAME=YangSiJun528
 INCLUDE_REPOS=owner1/repo1,owner2/repo2
 EXCLUDE_REPOS=owner3/repo3
+INCLUDE_ITEMS=owner3/repo3#789
+EXCLUDE_ITEMS=RustPython/RustPython#8763,owner2/repo2#456
 SHOW_SELF_CLOSED_REPOS=owner1/repo1
 INCORPORATED_PRS=spring-projects/spring-framework#12345,owner/repo#456
 ```
 
 ## Filtering rules
 
-Repositories are selected in this order:
+More specific rules take precedence. At the same level of specificity, `EXCLUDE` takes precedence over `INCLUDE`.
+
+| Conflicting rules | Result |
+| --- | --- |
+| Include an individual contribution; exclude its repository | Include the contribution |
+| Exclude an individual contribution; include its repository | Exclude the contribution |
+| Include and exclude the same contribution | Exclude the contribution |
+| Include and exclude the same repository | Exclude the repository |
+
+Individual contribution rules use `owner/repo#number` in `INCLUDE_ITEMS` or `EXCLUDE_ITEMS`, for either an Issue or a Pull Request. They are evaluated before repository and default filters. Explicit inclusion bypasses repository exclusion, ownership, star, and self-close filters; explicit exclusion takes precedence over all inclusion and status exceptions.
+
+Only contributions authored by the tracked user are collected. Inclusion changes visibility, not status: an open PR stays `Open`, and a closed, unmerged PR stays `Closed` unless a status override applies.
+
+Contributions without an individual rule follow these repository filters:
 
 1. Repositories owned by `TRACKED_GITHUB_USERNAME` are excluded.
 2. Repositories in `EXCLUDE_REPOS` are excluded.
 3. Repositories in `INCLUDE_REPOS` pass the star filter.
 4. Every other repository must have at least `MIN_STARS` stars.
 
-After a repository is selected, an Issue or unmerged Pull Request created and closed by `TRACKED_GITHUB_USERNAME` is hidden by default. `SHOW_SELF_CLOSED_REPOS` disables only this self-close filter; it does not override ownership, `EXCLUDE_REPOS`, or the star filter. A low-star repository may therefore need to appear in both `INCLUDE_REPOS` and `SHOW_SELF_CLOSED_REPOS`.
+After a repository is selected, an Issue or unmerged Pull Request created and closed by `TRACKED_GITHUB_USERNAME` is hidden by default. `SHOW_SELF_CLOSED_REPOS` disables only this self-close filter; it does not override ownership, explicit exclusions, or the star filter. A low-star repository may therefore need to appear in both `INCLUDE_REPOS` and `SHOW_SELF_CLOSED_REPOS`. Repository inclusion still bypasses only the star filter.
 
-A self-closed Issue remains visible when a merged Pull Request authored by `TRACKED_GITHUB_USERNAME` is linked to it. A Pull Request listed in `INCORPORATED_PRS` also remains visible and is displayed as `Adopted`.
+A self-closed Issue that passes repository filtering remains visible when a merged Pull Request authored by `TRACKED_GITHUB_USERNAME` is linked to it. A Pull Request listed in `INCORPORATED_PRS` also bypasses the self-close filter and is displayed as `Adopted`. Neither exception overrides an explicit exclusion.
 
-An item is hidden only when both its author and its latest closing actor match `TRACKED_GITHUB_USERNAME`. If either actor differs or cannot be verified, the item remains visible.
+The self-close filter hides an item only when both its author and its latest closing actor match `TRACKED_GITHUB_USERNAME`. If either actor differs or cannot be verified, this filter keeps the item.
 
 ## Pull Request statuses
 
