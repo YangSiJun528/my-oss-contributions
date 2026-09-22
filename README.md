@@ -2,7 +2,7 @@
 
 <sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [`ContextVar` values leak between interpreters](https://github.com/RustPython/RustPython/issues/8765)</sub>  
 <sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [dataclasses classes are not garbage-collected](https://github.com/RustPython/RustPython/issues/8764)</sub>  
-<sub>`2026-09` | ` PR  ` | ` Open  ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable Register for an empty passkey name](https://github.com/hackers-pub/hackerspub/pull/405)</sub>  
+<sub>`2026-09` | ` PR  ` | `Merged ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable Register for an empty passkey name](https://github.com/hackers-pub/hackerspub/pull/405)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Implement os.pread and os.pwrite](https://github.com/RustPython/RustPython/pull/8730)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Disable Javadoc checks for missing documentation](https://github.com/spring-io/initializr/pull/1843)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Return distinct empty lists from select()](https://github.com/RustPython/RustPython/pull/8720)</sub>  
@@ -10,7 +10,7 @@
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Improve null safety](https://github.com/spring-io/initializr/pull/1838)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Enum constants with class bodies as annotation values emit invalid code](https://github.com/spring-io/initializr/pull/1837)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Remove unused JSR-305 dependency](https://github.com/spring-io/initializr/pull/1836)</sub>  
-<sub>`2026-09` | `Issue` | ` Open  ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable the Register button for an empty passkey name](https://github.com/hackers-pub/hackerspub/issues/393)</sub>  
+<sub>`2026-09` | `Issue` | `Closed ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable the Register button for an empty passkey name](https://github.com/hackers-pub/hackerspub/issues/393)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix documentation overview partintro block](https://github.com/spring-io/initializr/pull/1832)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Remove duplicate SpringJUnit5Check declaration in Checkstyle](https://github.com/spring-io/initializr/pull/1831)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Update Java requirement in CONTRIBUTING](https://github.com/spring-io/initializr/pull/1830)</sub>  
