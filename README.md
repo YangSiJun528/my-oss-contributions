@@ -1,12 +1,14 @@
 # Open Source Contributions
 
+<sub>`2026-09` | ` PR  ` | ` Open  ` | [`      python/cpython       `](https://github.com/python/cpython) | [gh-158095: Fix reference cycles in re scanners](https://github.com/python/cpython/pull/158100)</sub>  
+<sub>`2026-09` | `Issue` | ` Open  ` | [`      python/cpython       `](https://github.com/python/cpython) | [`re.finditer()` leaks reference cycles through its input](https://github.com/python/cpython/issues/158095)</sub>  
 <sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [`ContextVar` values leak between interpreters](https://github.com/RustPython/RustPython/issues/8765)</sub>  
 <sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [dataclasses classes are not garbage-collected](https://github.com/RustPython/RustPython/issues/8764)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable Register for an empty passkey name](https://github.com/hackers-pub/hackerspub/pull/405)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Implement os.pread and os.pwrite](https://github.com/RustPython/RustPython/pull/8730)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Disable Javadoc checks for missing documentation](https://github.com/spring-io/initializr/pull/1843)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Return distinct empty lists from select()](https://github.com/RustPython/RustPython/pull/8720)</sub>  
-<sub>`2026-09` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix null argument handling in CodeBlock](https://github.com/spring-io/initializr/pull/1842)</sub>  
+<sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Codeblock fails on null arguments](https://github.com/spring-io/initializr/pull/1842)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Improve null safety](https://github.com/spring-io/initializr/pull/1838)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Enum constants with class bodies as annotation values emit invalid code](https://github.com/spring-io/initializr/pull/1837)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Remove unused JSR-305 dependency](https://github.com/spring-io/initializr/pull/1836)</sub>  
