@@ -2,7 +2,7 @@
 
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`      python/cpython       `](https://github.com/python/cpython) | [gh-158095: Fix reference cycles in re scanners](https://github.com/python/cpython/pull/158100)</sub>  
 <sub>`2026-09` | `Issue` | ` Open  ` | [`      python/cpython       `](https://github.com/python/cpython) | [`re.finditer()` leaks reference cycles through its input](https://github.com/python/cpython/issues/158095)</sub>  
-<sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [`ContextVar` values leak between interpreters](https://github.com/RustPython/RustPython/issues/8765)</sub>  
+<sub>`2026-09` | `Issue` | `Closed ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [`ContextVar` values leak between interpreters](https://github.com/RustPython/RustPython/issues/8765)</sub>  
 <sub>`2026-09` | `Issue` | ` Open  ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [dataclasses classes are not garbage-collected](https://github.com/RustPython/RustPython/issues/8764)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`  hackers-pub/hackerspub   `](https://github.com/hackers-pub/hackerspub) | [Disable Register for an empty passkey name](https://github.com/hackers-pub/hackerspub/pull/405)</sub>  
 <sub>`2026-09` | ` PR  ` | `Merged ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Implement os.pread and os.pwrite](https://github.com/RustPython/RustPython/pull/8730)</sub>  
