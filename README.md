@@ -1,5 +1,6 @@
 # Open Source Contributions
 
+<sub>`2026-10` | `Issue` | `Closed ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Review issues that appear resolved for closure](https://github.com/RustPython/RustPython/issues/8982)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`      python/cpython       `](https://github.com/python/cpython) | [gh-158095: Fix reference cycles in re scanners](https://github.com/python/cpython/pull/158100)</sub>  
 <sub>`2026-09` | `Issue` | ` Open  ` | [`      python/cpython       `](https://github.com/python/cpython) | [`re.finditer()` leaks reference cycles through its input](https://github.com/python/cpython/issues/158095)</sub>  
 <sub>`2026-09` | `Issue` | `Closed ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [`ContextVar` values leak between interpreters](https://github.com/RustPython/RustPython/issues/8765)</sub>  
