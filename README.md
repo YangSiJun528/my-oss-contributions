@@ -1,5 +1,6 @@
 # Open Source Contributions
 
+<sub>`2026-10` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Fix Compose test setup and URLs](https://github.com/spring-io/initializr/pull/1867)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Exclusion validates groupId twice and misses artifactId](https://github.com/spring-io/initializr/pull/1865)</sub>  
 <sub>`2026-10` | `Issue` | `Closed ` | [`   RustPython/RustPython   `](https://github.com/RustPython/RustPython) | [Review issues that appear resolved for closure](https://github.com/RustPython/RustPython/issues/8982)</sub>  
 <sub>`2026-09` | ` PR  ` | ` Open  ` | [`      python/cpython       `](https://github.com/python/cpython) | [gh-158095: Fix reference cycles in re scanners](https://github.com/python/cpython/pull/158100)</sub>  
