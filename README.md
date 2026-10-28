@@ -1,6 +1,6 @@
 # Open Source Contributions
 
-<sub>`2026-10` | ` PR  ` | ` Open  ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2026년 강의 원문 추가와 사이트 최신화](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/41)</sub>  
+<sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2026년 강의 원문 추가와 사이트 최신화](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/41)</sub>  
 <sub>`2026-10` | `Issue` | ` Open  ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [외부 링크 검사 실패 항목 정리](https://github.com/missing-semester-kr/missing-semester-kr.github.io/issues/40)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [빌드 검사의 주간 실행 제거](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/39)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [빌드 환경과 GitHub Actions 최신화](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/38)</sub>  
