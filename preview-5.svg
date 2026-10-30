@@ -31,9 +31,9 @@
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
     <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="mono" x="173" y="16" text-anchor="middle">Open</text>
     <text class="repo" x="224" y="17">missing-semester-kr.github…</text>
-    <text class="item" x="425" y="17">번역 안내를 인용문으로 표시하고 문구 명확화</text>
+    <text class="item" x="425" y="17">2020년 강의 원문 변경 반영</text>
   </g>
   <g transform="translate(22 88)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
@@ -43,9 +43,19 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">missing-semester-kr.github…</text>
-    <text class="item" x="425" y="17">2026년 강의 원문 추가와 사이트 최신화</text>
+    <text class="item" x="425" y="17">번역 안내를 인용문으로 표시하고 문구 명확화</text>
   </g>
   <g transform="translate(22 120)">
+    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
+    <text class="mono" x="33" y="16" text-anchor="middle">2026-10</text>
+    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
+    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
+    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
+    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
+    <text class="repo" x="224" y="17">missing-semester-kr.github…</text>
+    <text class="item" x="425" y="17">2026년 강의 원문 추가와 사이트 최신화</text>
+  </g>
+  <g transform="translate(22 152)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-10</text>
     <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
@@ -55,16 +65,6 @@
     <text class="repo" x="224" y="17">missing-semester-kr.github…</text>
     <text class="item" x="425" y="17">외부 링크 검사 실패 항목 정리</text>
   </g>
-  <g transform="translate(22 152)">
-    <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
-    <text class="mono" x="33" y="16" text-anchor="middle">2026-10</text>
-    <rect class="cell" x="76" y="0" width="52" height="24" rx="6"/>
-    <text class="mono" x="102" y="16" text-anchor="middle">PR</text>
-    <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
-    <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
-    <text class="repo" x="224" y="17">missing-semester-kr.github…</text>
-    <text class="item" x="425" y="17">빌드 검사의 주간 실행 제거</text>
-  </g>
   <g transform="translate(22 184)">
     <rect class="cell" x="0" y="0" width="66" height="24" rx="6"/>
     <text class="mono" x="33" y="16" text-anchor="middle">2026-10</text>
@@ -73,7 +73,7 @@
     <rect class="cell" x="138" y="0" width="70" height="24" rx="6"/>
     <text class="mono" x="173" y="16" text-anchor="middle">Merged</text>
     <text class="repo" x="224" y="17">missing-semester-kr.github…</text>
-    <text class="item" x="425" y="17">빌드 환경과 GitHub Actions 최신화</text>
+    <text class="item" x="425" y="17">빌드 검사의 주간 실행 제거</text>
   </g>
 
   <text class="more" x="938" y="226" text-anchor="end">View all contributions →</text>
