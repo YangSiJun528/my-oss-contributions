@@ -1,6 +1,6 @@
 # Open Source Contributions
 
-<sub>`2026-11` | ` PR  ` | ` Open  ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2019년 강의 한국어 번역 초안 추가](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/45)</sub>  
+<sub>`2026-11` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2019년 강의 한국어 번역 초안 추가](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/45)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2020년 강의 원문 변경 반영](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/43)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [번역 안내를 인용문으로 표시하고 문구 명확화](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/42)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2026년 강의 원문 추가와 사이트 최신화](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/41)</sub>  
