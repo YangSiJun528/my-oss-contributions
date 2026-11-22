@@ -1,5 +1,7 @@
 # Open Source Contributions
 
+<sub>`2026-11` | ` PR  ` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Let KotlinJpaGradleBuildCustomizer determine the quote style](https://github.com/spring-io/initializr/pull/1887)</sub>  
+<sub>`2026-11` | `Issue` | ` Open  ` | [`   spring-io/initializr    `](https://github.com/spring-io/initializr) | [Remove explicit JPA all-open options after dropping support for Spring Boot 4.0.x...](https://github.com/spring-io/initializr/issues/1886 "Remove explicit JPA all-open options after dropping support for Spring Boot 4.0.x projects")</sub>  
 <sub>`2026-11` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2019년 강의 한국어 번역 초안 추가](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/45)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [2020년 강의 원문 변경 반영](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/43)</sub>  
 <sub>`2026-10` | ` PR  ` | `Merged ` | [`missing-semester-kr.github…`](https://github.com/missing-semester-kr/missing-semester-kr.github.io "missing-semester-kr/missing-semester-kr.github.io") | [번역 안내를 인용문으로 표시하고 문구 명확화](https://github.com/missing-semester-kr/missing-semester-kr.github.io/pull/42)</sub>  
